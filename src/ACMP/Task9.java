@@ -13,8 +13,8 @@ public class Task9 {
         String numbers = reader.readLine();
         String[] strings = numbers.split(" ");
         int[] array = Arrays.asList(strings).stream().mapToInt(Integer::parseInt).toArray();
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
+        int max = array[0];
+        int min = array[0];
         int max_index = 0;
         int min_index = 0;
         int plus_sum = 0;
@@ -33,11 +33,18 @@ public class Task9 {
             }
 
         }
-        System.out.println(min_index);
-        System.out.println(max_index);
-        for(int j=min_index+1; j<max_index; j++){
-            proizv = proizv*array[j];
 
+        if(min_index<max_index) {
+            for (int j = min_index+1; j < max_index; j++) {
+                proizv = proizv * array[j];
+
+
+            }
+        }
+        if(max_index<min_index){
+            for(int j=max_index+1; j<min_index;j++){
+                proizv = proizv*array[j];
+            }
         }
         System.out.println(plus_sum+" "+proizv);
 
