@@ -32,6 +32,7 @@ public class Task12 {
                 x3 = Character.getNumericValue(coords.get(i).charAt(12));
                 y3 = Character.getNumericValue(coords.get(i).charAt(14));
             System.out.println(isTarget(x, y, x1, y1, 1, 1, x3, y3, 1, 1));
+            System.out.println();
 
         }
 
